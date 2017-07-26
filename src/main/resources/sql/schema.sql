@@ -1,5 +1,5 @@
 
-
+DROP TABLE oauth_access_token
 
 CREATE TABLE oauth_access_token (
   token_id VARCHAR(256) DEFAULT NULL,
