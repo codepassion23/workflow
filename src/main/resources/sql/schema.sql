@@ -1,5 +1,10 @@
-DROP TABLE oauth_access_token;
-DROP TABLE oauth_refresh_token;
+IF EXISTS (SELECT * FROM INFORMATION_SCHEMA.TABLES 
+           WHERE TABLE_NAME = N'oauth_access_token')
+BEGIN
+  DROP TABLE oauth_access_token;
+  DROP TABLE oauth_refresh_token;
+END
+
 CREATE TABLE oauth_access_token (
   token_id VARCHAR(256) DEFAULT NULL,
   token BLOB,
